@@ -2,7 +2,7 @@
 
 En este repositorio encontraréis un primer proyecto que he hecho con Django.
 
-Aparte, utilizaré el propio [README](https://github.com/VictorAndujarTerron-github/Django-Prueba/new/main?filename=README.md) para explicar las cosas que he aprendido de Django mientras hacia el proyecto y también como he hecho.
+Aparte, utilizaré el propio [README](https://github.com/VictorAndujarTerron-github/Django-Prueba/blob/647eff8ac5a7e027aa511111adacf1fbc4d48512/README.md) para explicar las cosas que he aprendido de Django mientras hacia el proyecto y también como he hecho.
 
 ## Crear entorno virtual
 Si quieres trabajar con Django primero deberás instalar Python. Esto se debe a que Django es un *framework* de Python
