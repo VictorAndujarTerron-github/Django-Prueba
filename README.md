@@ -67,6 +67,10 @@ Las siguientes líneas de código:
     def my_view(request):
         render(request, "my_first_app/car_list.html"
 
+El *context*, que es la lista de 4 coches que hemos creado, no nos es útil. Lo que de verdad necesitamos es que esta request acceda a la base de datos y nos pase los elementos de la tabla de coches. Esto se explica en otro punto más adelante del Readme (**insertar enlace a lectura de la base de datos**)
+
+Para hacer que Django encuentre el archivo *car_list.html* tenemos que ir al archivo *settings.py* que estará en la carpeta con el mismo nombre del proyecto. En este archivo habrá que buscar la lista *INSTALLED APPS* y añadir ahí el nombre de nuestra aplicación.
+
 ## Acknowledgements
 
  - [Curso de Django de Platzi](https://platzi.com/cursos/django/)
