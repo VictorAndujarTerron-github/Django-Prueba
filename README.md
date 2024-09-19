@@ -135,7 +135,42 @@ Que genera el modelo (se puede ver en el archivo recién creada) en del modelo, 
 Y así migrarla finalmente a la BD.
 
 ## Como ver la BD
+Para poder ver la BD tenemos que ejecutar el comando:
 
+- *./manage.py dbshell*
+
+Este comando cambia la terminal para que pueda operar con la base de datos y entienda ordenes SQL. La base de datos en tu app se debe de llamar db.sqlite3.
+
+Con el comando siguiente podremos ver todas las tablas que tiene la BD:
+
+- *.table*
+
+Ahí podremos ver el modelo que hemos creado identificado con el nombre de nuestra app seguido del nombre del modelo.
+
+El comando:
+
+- *scheme ...nombre de tabla...*
+
+Permite saber como y con que atributos se identifica cada elemento de la tabla.
+
+## Crear, editar y eliminar datos de la BD
+Primero tenemos que ejecutar el siguiente comando para hacer que la terminal pueda operar con la BD como si el proyecto estuviera corriendo todo el rato:
+
+- *python manage.py shell*
+
+Cargamos el modelo en la shell con el comando:
+
+- *from ...nombre de la app... import ...nombre del modelo...*
+
+Para crear un nuevo dato en la base de datos tenemos que utilizar la siguiente línea de comandos:
+
+- *...nombre del dato... = ...nombre del modelo...(...nombre del atributo...= ...valor del atributo, ...)*
+
+Para poder ver los valores de un dato de un tipo de modelo en concreto tenemos que crear la siguiente función en el archivo models.py dentro de la declaración de ese modelo en concreto.
+
+    # Este metodo imprime los datos que tenemos del objeto que llama a la función
+    def __str__(self):
+        return f"{self.title} - {self.year} - {self.color}"
 
 ## Acknowledgements
 
