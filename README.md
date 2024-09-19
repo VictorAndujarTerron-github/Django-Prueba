@@ -242,7 +242,7 @@ Y vamos a añadir el atributo autores a la clase *Book*:
 Ahora, el atributo authors de la clase *Book* puede recibir varios Autores como valor y los tiene que almacenar todo.
 Intenta tu la prueba de crear distintos autores y asignarlos todos al mismo libro.
 
-Si después de intentarlo no te has salido con la tuya o tienes dudas, accede a este link para poder ver más acerca de relaciones (N:N) [n:n_solución]()
+Si después de intentarlo no te has salido con la tuya o tienes dudas, accede a este link para poder ver más acerca de relaciones (N:N) [n:n_solución](https://github.com/VictorAndujarTerron-github/Django-Prueba/blob/eb91566e0b6b84192c548eaa7d5f94bf24c09d0e/n%3An-soluci%C3%B3n.md)
 
 ## Acknowledgements
 

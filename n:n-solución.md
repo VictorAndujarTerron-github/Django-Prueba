@@ -3,7 +3,7 @@ Para empezar tienes que tener en cuenta que cuando tu pidas la lista de autores 
 
 - *select * from my_first_app_book_author;*
 
-Si no has sabido como asociar los autores, aquí dejo un ejemplo de como crear un libro, autores y como he asociado dichos autores a ese libro en concreto:
+Si no has sabido como asociar los autores, aquí dejo un ejemplo de como recuperar un libro ya creado, como crear autores y como he asociado dichos autores a ese libro en concreto:
 
     #Importando los modelos libro, autores,
     from my_first_app.models import Book, Author
