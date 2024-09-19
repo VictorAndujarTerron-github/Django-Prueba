@@ -110,7 +110,14 @@ Este template es lo que se mostrará cuando un usuario haga click en un botón o
     ]
 
 ## Comprobación de lo hecho hasta ahora
-Si queremos mirar si todo lo que hemos hecho hasta ahora funciona, debemos iniciar el servidor con la instrucción especificada más arriba. Si entramos al *http* que nos genera, nos saldrá error 404, ya que no es una página con dominio. Podemos ver que más abajo tenemos un listado de URLs, si copiamos la segunda (car-list/) junto a la dirección ip de nuestra web, deberiamos de ser capaces de ver el listado de coches que hemos creado antes.
+Si queremos mirar si todo lo que hemos hecho hasta ahora funciona, debemos iniciar el servidor con la instrucción especificada más arriba. Si entramos al *http* que nos genera, nos saldrá error 404, ya que no es una página con dominio. Podemos ver que más abajo tenemos un listado de URLs, si copiamos la segunda (car-list/) junto a la dirección ip de nuestra web, deberíamos de ser capaces de ver el listado de coches que hemos creado antes.
+
+## ORM
+El ORM de Django nos permite crear clases en Python y relacionarlas con la base de datos y así evitar escribir sentencias SQL. Cada clase que creemos en Python se crea una tabla en la BD. Existe el termino *migraciones*, estas se pueden correr desde los modelos hacia la BS y viceversa. 
+- Si lo hacemos desde los modelos hacia la BD, todos los modelos que la BD no conociera los genera en forma de tablas.
+- Si lo hacemos desde la BD hacia los modelos, podriamos eliminar una tabla de la BD.
+
+Cada vez que modificamos algún modelo en el archivo *models.py*, habra que hacer una migración desde los modelos hacia la BD.
 
 ## Acknowledgements
 
