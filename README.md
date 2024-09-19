@@ -257,6 +257,8 @@ Para este caso vamos a crear otro modelo, dejo por aquí el código:
 
 En el atributo name asociaremos un único autor que tendra su propio perfil. Si el autor se asocia un perfil, entonces obligatoriamente tendrá que dar su web y biografia.
 
+## Gestión de URLs
+
 ## Acknowledgements
 
  - [Curso de Django de Platzi](https://platzi.com/cursos/django/)
