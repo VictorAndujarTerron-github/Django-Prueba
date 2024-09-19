@@ -136,6 +136,7 @@ Y así migrarla finalmente a la BD.
 
 ## Como ver la BD
 
+
 ## Acknowledgements
 
  - [Curso de Django de Platzi](https://platzi.com/cursos/django/)
