@@ -187,7 +187,27 @@ Ya por último, para eliminar ejecutamos únicamente:
 - *...nombre del dato... .delete()*
 
 ## Relaciones entre modelos
+Aquí más adelante os dejo un ejemplo de código donde cada libro esta relacionado con una empresa o persona que lo publica:
 
+    class Publisher(models.Model):
+    name = models.TextField(max_length = 200)
+    address = models.TextField(max_length = 200)
+
+    # Este metodo imprime los datos que tenemos del objeto que llama a la función
+    def __str__(self):
+        return f"{self.name} - {self.address}"
+
+
+    class Book(models.Model):
+    title = models.TextField(max_length = 50)
+    publication_date = models.DateField()
+    publisher = models.ForeignKey(Publisher, on_delete=models.CASCADE)
+
+En la línea en la que pone CASCADE hay tres configuraciones diferentes. Estas alteran lo que le pasara al dato Book en caso de que se elimine el Publisher con el que esta asociado, los valores son:
+
+- DO_NOTHING --> no se hará ningun cambio en el dato si el Publisher se elimina.
+- CASCADE --> se eliminará si el Publisher se elimina.
+- PROTECT --> no permitira eliminar el Publisher ya que tiene asociaciones creadas.
 
 
 ## Acknowledgements
