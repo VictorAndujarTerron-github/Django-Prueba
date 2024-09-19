@@ -172,6 +172,24 @@ Para poder ver los valores de un dato de un tipo de modelo en concreto tenemos q
     def __str__(self):
         return f"{self.title} - {self.year} - {self.color}"
 
+Para finalmente guardar el dato en la BD tenemos que usar:
+
+- *...nombre del dato... .save()*
+
+Para cambiar un valor tenemos que hacer:
+
+- *...nombre del dato... . ...nombre del atributo... = ...nuevo valor...*
+
+Y luego hacer un save para que se registre el cambio en la BD.
+
+Ya por último, para eliminar ejecutamos únicamente:
+
+- *...nombre del dato... .delete()*
+
+## Relaciones entre modelos
+
+
+
 ## Acknowledgements
 
  - [Curso de Django de Platzi](https://platzi.com/cursos/django/)
