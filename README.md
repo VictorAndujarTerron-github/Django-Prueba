@@ -244,6 +244,19 @@ Intenta tu la prueba de crear distintos autores y asignarlos todos al mismo libr
 
 Si después de intentarlo no te has salido con la tuya o tienes dudas, accede a este link para poder ver más acerca de relaciones (N:N) ([n:n_solución](https://github.com/VictorAndujarTerron-github/Django-Prueba/blob/eb91566e0b6b84192c548eaa7d5f94bf24c09d0e/n%3An-soluci%C3%B3n.md))
 
+## Relaciones entre modelos (1:1)
+Para este caso vamos a crear otro modelo, dejo por aquí el código:
+
+    class Profile(models.Model):
+        name = models.OneToOneField(Author, on_delete=models.CASCADE)
+        website = models.URLField()
+        biography = models.TextField(max_length = 500)
+
+        def __str__(self):
+            return f"{self.name}"
+
+En el atributo name asociaremos un único autor que tendra su propio perfil. Si el autor se asocia un perfil, entonces obligatoriamente tendrá que dar su web y biografia.
+
 ## Acknowledgements
 
  - [Curso de Django de Platzi](https://platzi.com/cursos/django/)
