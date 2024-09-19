@@ -113,11 +113,28 @@ Este template es lo que se mostrará cuando un usuario haga click en un botón o
 Si queremos mirar si todo lo que hemos hecho hasta ahora funciona, debemos iniciar el servidor con la instrucción especificada más arriba. Si entramos al *http* que nos genera, nos saldrá error 404, ya que no es una página con dominio. Podemos ver que más abajo tenemos un listado de URLs, si copiamos la segunda (car-list/) junto a la dirección ip de nuestra web, deberíamos de ser capaces de ver el listado de coches que hemos creado antes.
 
 ## ORM
-El ORM de Django nos permite crear clases en Python y relacionarlas con la base de datos y así evitar escribir sentencias SQL. Cada clase que creemos en Python se crea una tabla en la BD. Existe el termino *migraciones*, estas se pueden correr desde los modelos hacia la BS y viceversa. 
+El ORM de Django nos permite crear clases en Python y relacionarlas con la base de datos y así evitar escribir sentencias SQL. Cada clase que creemos en Python se crea una tabla en la BD. Existe el término *migraciones*, estas se pueden correr desde los modelos hacia la BS y viceversa. 
 - Si lo hacemos desde los modelos hacia la BD, todos los modelos que la BD no conociera los genera en forma de tablas.
-- Si lo hacemos desde la BD hacia los modelos, podriamos eliminar una tabla de la BD.
+- Si lo hacemos desde la BD hacia los modelos, podríamos eliminar una tabla de la BD.
 
-Cada vez que modificamos algún modelo en el archivo *models.py*, habra que hacer una migración desde los modelos hacia la BD.
+Cada vez que modificamos algún modelo en el archivo *models.py*, habrá que hacer una migración desde los modelos hacia la BD.
+
+## Migrate
+Ahora vamos a solucionar el error que nos salía al iniciar el servidor. Este error nos especifica que hay 18 migraciones incompletas. Para migrar un modelo a la base de datos hay que usar el comando siguiente:
+
+- *python manage.py migrate"
+
+El problema es que esto no migra el modelo "Car". Para ello tenemos que poner el comando:
+
+- *python manage.py makemigrations"
+
+Que genera el modelo (se puede ver en el archivo recién creada) en del modelo, para luego usar:
+
+- *python manage.py migrate"
+
+Y así migrarla finalmente a la BD.
+
+## Como ver la BD
 
 ## Acknowledgements
 
