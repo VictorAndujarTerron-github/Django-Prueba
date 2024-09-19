@@ -20,11 +20,21 @@ class Publisher(models.Model):
         return f"{self.name} - {self.address}"
 
 
+class Author(models.Model):
+    name = models.TextField(max_length = 200)
+    birthday = models.DateField()
+
+    # Este metodo imprime los datos que tenemos del objeto que llama a la función
+    def __str__(self):
+        return f"{self.name}"
+
+
 class Book(models.Model):
     title = models.TextField(max_length = 50)
     publication_date = models.DateField()
     publisher = models.ForeignKey(Publisher, on_delete=models.CASCADE)
+    authors = models.ManyToManyField(Author, related_name="authors")
 
     # Este metodo imprime los datos que tenemos del objeto que llama a la función
     def __str__(self):
-        return f"{self.title} - {self.publication_data}"
+        return f"{self.title} - {self.publication_date}"

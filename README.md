@@ -209,6 +209,40 @@ En la línea en la que pone CASCADE hay tres configuraciones diferentes. Estas a
 - CASCADE --> se eliminará si el Publisher se elimina.
 - PROTECT --> no permitira eliminar el Publisher ya que tiene asociaciones creadas.
 
+## Como hacer la shell interactiva
+Si instalamos ipython con el comando:
+
+- *pip install ipython*
+
+Hacemos que la terminal shell sea interactiva y tenga autocompletado, lo cual ayuda a programar más rápido.
+
+## Relaciones entre modelos (N:N)
+Vamos a crear una nueva clase llamada *Authors* la cual se va a formar así:
+
+    class Author(models.Model):
+        name = models.TextField(max_length = 200)
+        birthday = models.DateField()
+
+        # Este metodo imprime los datos que tenemos del objeto que llama a la función
+        def __str__(self):
+            return f"{self.name}"
+
+Y vamos a añadir el atributo autores a la clase *Book*:
+
+    class Book(models.Model):
+        title = models.TextField(max_length = 50)
+        publication_date = models.DateField()
+        publisher = models.ForeignKey(Publisher, on_delete=models.CASCADE)
+        authors = models.ManyToManyField(Author, related_name="authors")
+
+        # Este metodo imprime los datos que tenemos del objeto que llama a la función
+        def __str__(self):
+            return f"{self.title} - {self.publication_data}"
+
+Ahora, el atributo authors de la clase *Book* puede recibir varios Autores como valor y los tiene que almacenar todo.
+Intenta tu la prueba de crear distintos autores y asignarlos todos al mismo libro.
+
+Si después de intentarlo no te has salido con la tuya o tienes dudas, accede a este link para poder ver más acerca de relaciones (N:N) [n:n_solución]()
 
 ## Acknowledgements
 
