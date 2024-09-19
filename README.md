@@ -65,7 +65,16 @@ Las siguientes líneas de código:
 
     # Create your views here.
     def my_view(request):
-        render(request, "my_first_app/car_list.html")
+        car_list = [
+            {"title": "BMW"},
+            {"title": "Nissan"},
+            {"title": "Mazda"},
+            {"title": "Tesla"}
+        ]
+        context = {
+            "car_list": car_list
+        }
+    return render(request, "my_first_app/car_list.html", context)
 
 El *context*, que es la lista de 4 coches que hemos creado, no nos es útil. Lo que de verdad necesitamos es que esta request acceda a la base de datos y nos pase los elementos de la tabla de coches. Esto se explica en otro punto más adelante del Readme (**insertar enlace a lectura de la base de datos**)
 
@@ -99,6 +108,9 @@ Este template es lo que se mostrará cuando un usuario haga click en un botón o
         path('admin/', admin.site.urls),
         path('car-list/', my_view)
     ]
+
+## Comprobación de lo hecho hasta ahora
+Si queremos mirar si todo lo que hemos hecho hasta ahora funciona, debemos iniciar el servidor con la instrucción especificada más arriba. Si entramos al *http* que nos genera, nos saldrá error 404, ya que no es una página con dominio. Podemos ver que más abajo tenemos un listado de URLs, si copiamos la segunda (car-list/) junto a la dirección ip de nuestra web, deberiamos de ser capaces de ver el listado de coches que hemos creado antes.
 
 ## Acknowledgements
 
