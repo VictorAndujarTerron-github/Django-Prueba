@@ -58,18 +58,47 @@ Para crear nuestro primer modelo vamos a poner las siguientes líneas de código
 
 En este caso hemos creado una clase/modelo de tipo coche con un único atributo que será el nombre del coche. "max_length" hace que número de caracteres que tiene el atributo es como máximo 250.
 
-## Creando nuestro primer metodo en views
+## Creando nuestro primer método en views
 Las siguientes líneas de código:
 
     from django.shortcuts import render
 
     # Create your views here.
     def my_view(request):
-        render(request, "my_first_app/car_list.html"
+        render(request, "my_first_app/car_list.html")
 
 El *context*, que es la lista de 4 coches que hemos creado, no nos es útil. Lo que de verdad necesitamos es que esta request acceda a la base de datos y nos pase los elementos de la tabla de coches. Esto se explica en otro punto más adelante del Readme (**insertar enlace a lectura de la base de datos**)
 
 Para hacer que Django encuentre el archivo *car_list.html* tenemos que ir al archivo *settings.py* que estará en la carpeta con el mismo nombre del proyecto. En este archivo habrá que buscar la lista *INSTALLED APPS* y añadir ahí el nombre de nuestra aplicación.
+
+## Creando nuestro primer template
+Para crear un template, tenemos que tener una carpeta llamada *templates* y dentro de esta otra carpeta con el mismo nombre que el de la app que estamos creando. Ahí crearemos todos nuestros templates, en mi caso el primero se llamará car_list.html y contendrá el siguiente código:
+
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            Car List
+        </title>
+    </head>
+    <body>
+        <h1>Esta es la lista de carros:</h1>
+        {% for car in car_list %}
+            <li>{{car.title}}</li>
+        {% endfor %}
+    </body>
+    </html>
+
+Este template es lo que se mostrará cuando un usuario haga click en un botón o link que tenga este asociado al "car_list.html", pero para ello tenemos que crear un path para que la app reconozca el template y lo pueda usar. Para ello, tenemos que buscar el archivo *"urls.py"* dentro de la carpeta de nuestro proyecto. Una vez encontrado, deberemos asociar la view que hemos creado anteriormente con un nuevo path, os debería de quedar así:
+
+    from django.contrib import admin
+    from django.urls import path
+    from my_first_app.views import my_view
+
+    urlpatterns = [
+        path('admin/', admin.site.urls),
+        path('car-list/', my_view)
+    ]
 
 ## Acknowledgements
 
