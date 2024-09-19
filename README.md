@@ -99,7 +99,6 @@ Para crear un template, tenemos que tener una carpeta llamada *templates* y dent
     </html>
 
 Este template es lo que se mostrará cuando un usuario haga click en un botón o link que tenga este asociado al "car_list.html", pero para ello tenemos que crear un path para que la app reconozca el template y lo pueda usar. Para ello, tenemos que buscar el archivo *"urls.py"* dentro de la carpeta de nuestro proyecto. Una vez encontrado, deberemos asociar la view que hemos creado anteriormente con un nuevo path, os debería de quedar así:
-
     from django.contrib import admin
     from django.urls import path
     from my_first_app.views import my_view
