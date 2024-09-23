@@ -258,6 +258,9 @@ Para este caso vamos a crear otro modelo, dejo por aquí el código:
 En el atributo name asociaremos un único autor que tendra su propio perfil. Si el autor se asocia un perfil, entonces obligatoriamente tendrá que dar su web y biografia.
 
 ## Gestión de URLs
+Para añadir URLs a la app es recomendable crear un archivo *urls.py* dentro de la propia carpeta de la app. Para que todo el proyecto reconozca esas URLs, hay que añadir el path dentro del archivo *url.py* de la carpeta del proyecto, que no es el mismo que hay en la carpeta de la app. Podemos hacer que le entren parámetros al request con los atributos *args y kwargs*. De esta manera:
+
+    def my_view(request, *args, **kwargs):
 
 ## Acknowledgements
 
