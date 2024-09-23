@@ -35,7 +35,7 @@ Si queremos ejecutar el servidor tendremos que entrar en la carpeta del proyecto
 
 - *python manage.py runserver*
 
-Cuando lo ejecutes por primera vez te saldrá un error que no afecta a iniciar el servidor. Esto se solucionará en un punto más adelante de este Readme ([Migrates])(https://github.com/VictorAndujarTerron-github/Django-Prueba/blob/Readme/README.md#migrate).
+Cuando lo ejecutes por primera vez te saldrá un error que no afecta a iniciar el servidor. Esto se solucionará en un punto más adelante de este Readme --> [Migrates](https://github.com/VictorAndujarTerron-github/Django-Prueba/blob/Readme/README.md#migrate).
 
 ## Modelo, Vista y Template (MVT)
 Django nos permite crear apps dentro de un proyecto. Estas apps son las que utilizan el patrón MVT. Para crear una app dentro del proyecto hay que utilizar este comando:
